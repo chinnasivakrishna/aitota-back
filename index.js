@@ -21,7 +21,7 @@ app.use(cors());
 app.get('/', (req,res)=>{
     res.send("hello world")
 })
-app.post('/api/v1/proxy/client/clicktobot', async (req, res) => {
+app.post('/api/v1/client/proxy/clicktobot', async (req, res) => {
     try {
       const { apiKey, payload } = req.body;
       cosnole.log(req.body)
