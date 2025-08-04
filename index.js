@@ -24,7 +24,7 @@ app.get('/', (req,res)=>{
 app.post('/api/v1/client/proxy/clicktobot', async (req, res) => {
     try {
       const { apiKey, payload } = req.body;
-      cosnole.log(req.body)
+      console.log(req.body)
       
       const response = await axios.post(
         'https://3neysomt18.execute-api.us-east-1.amazonaws.com/dev/clicktobot',
