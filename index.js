@@ -21,14 +21,10 @@ app.use(cors());
 app.get('/', (req,res)=>{
     res.send("hello world")
 })
-
-app.use('/api/v1/superadmin',superadminRoutes);
-app.use('/api/v1/admin',adminRoutes);
-app.use('/api/v1/client',clientRoutes);
-app.use('/api/v1/auth/client/profile', profileRoutes);
 app.post('/api/v1/proxy/clicktobot', async (req, res) => {
     try {
       const { apiKey, payload } = req.body;
+      cosnole.log(req.body)
       
       const response = await axios.post(
         'https://3neysomt18.execute-api.us-east-1.amazonaws.com/dev/clicktobot',
@@ -54,6 +50,11 @@ app.post('/api/v1/proxy/clicktobot', async (req, res) => {
       });
     }
   });
+app.use('/api/v1/superadmin',superadminRoutes);
+app.use('/api/v1/admin',adminRoutes);
+app.use('/api/v1/client',clientRoutes);
+app.use('/api/v1/auth/client/profile', profileRoutes);
+
 
 const PORT = 4000 || process.env.PORT;
 
